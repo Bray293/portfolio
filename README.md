@@ -2,7 +2,7 @@
 
 Portfolio personnel présentant mon profil, mon parcours, mes projets et mes passions. Développé en HTML/CSS/JavaScript pur (sans framework), sur le thème visuel d'un éditeur de code.
 
-🔗 **Site en ligne :** _à compléter avec ton lien GitHub Pages (ex : https://bray293.github.io/portfolio/)_
+🔗 **Site en ligne : https://bray293.github.io/portfolio/
 
 ## Structure du site
 
