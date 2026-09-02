@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact — Brayan Campion</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="editor-window">
+  <div class="window-chrome">
+    <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
+    <span class="window-title">portfolio — ~/brayan-campion</span>
+    <button class="menu-toggle" aria-label="Ouvrir le menu" onclick="toggleMenu(this)">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <nav class="tabs" id="siteNav">
+    <a href="index.html">Mon<span class="ext">Profile</span></a>
+    <a href="about.html">Mon<span class="ext">Parcour</span></a>
+    <a href="projects.html">Mes<span class="ext">Projets</span></a>
+    <a href="passions.html">Mes<span class="ext">Passion</span></a>
+    <a href="contact.html" class="active">Contact<span class="unsaved"></span></a>
+  </nav>
+</header>
+
+<main>
+  <span class="eyebrow">// contact</span>
+  <h2>Discutons</h2>
+  <p style="max-width:60ch;">
+    Une question, une offre de stage ou d'emploi ? N'hésite pas à m'écrire, je réponds rapidement.
+  </p>
+
+  <div class="contact-grid">
+    <form action="https://formspree.io/f/mkjngkpq" method="post">
+      <div class="field">
+        <label for="name">nom</label>
+        <input type="text" id="name" name="nom" required>
+      </div>
+      <div class="field">
+        <label for="email">email</label>
+        <input type="email" id="email" name="email" required>
+      </div>
+      <div class="field">
+        <label for="message">message</label>
+        <textarea id="message" name="message" required></textarea>
+      </div>
+      <button type="submit" class="btn primary">Envoyer →</button>
+    </form>
+
+    <div>
+      <ul class="social-list">
+        <li><a href="mailto:brayan.campion1@gmail.com">brayan.campion1@gmail.com <span class="arrow">↗</span></a></li>
+        <li><a href="https://github.com/Bray293" target="_blank">GitHub <span class="arrow">↗</span></a></li>
+        <li><a href="https://www.linkedin.com/in/brayan-campion-440994294/" target="_blank">LinkedIn <span class="arrow">↗</span></a></li>
+        <li><a href="CV-Campion-Brayan.pdf" target="_blank">Télécharger mon CV <span class="arrow">↗</span></a></li>
+      </ul>
+      <p style="margin-top:24px;">Rosporden (29140) — permis B</p>
+    </div>
+  </div>
+</main>
+
+<footer>© 2026 Brayan Campion — construit avec HTML &amp; CSS, hébergé sur GitHub Pages</footer>
+
+<script>
+  function toggleMenu(btn) {
+    document.getElementById('siteNav').classList.toggle('open');
+    btn.classList.toggle('open');
+  }
+</script>
+
+</body>
+</html>

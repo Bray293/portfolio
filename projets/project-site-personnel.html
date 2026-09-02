@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Site web personnel — Brayan Campion</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+
+  <header class="editor-window">
+    <div class="window-chrome">
+      <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
+      <span class="window-title">portfolio — ~/brayan-campion</span>
+      <button class="menu-toggle" aria-label="Ouvrir le menu" onclick="toggleMenu(this)">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <nav class="tabs" id="siteNav">
+      <a href="../index.html">Mon<span class="ext">Profile</span></a>
+      <a href="../about.html">Mon<span class="ext">Parcour</span></a>
+      <a href="../projects.html" class="active">Mes<span class="ext">Projets</span><span class="unsaved"></span></a>
+      <a href="../passions.html">Mes<span class="ext">Passion</span></a>
+      <a href="../contact.html">Contact<span class="ext"></span></a>
+    </nav>
+  </header>
+
+  <main>
+    <a href="../projects.html" class="back-link">← retour aux projets</a>
+
+    <div class="project-header">
+      <span class="eyebrow">// projet 03</span>
+      <h1>Site web personnel</h1>
+      <div class="tags"><span>HTML</span><span>CSS</span></div>
+    </div>
+
+    <section class="block">
+      <h2>Explication</h2>
+      <p style="max-width:65ch;">
+        « Historium Legacy » est un site dédié aux passionnés d'automobile : il permet d'explorer
+        l'histoire des plus grandes marques de voitures, classées par pays d'origine (japonaises,
+        françaises, allemandes, américaines, italiennes, britanniques...). Chaque logo renvoie vers
+        une page dédiée à la marque. Le site est entierement réalisé en HTML/CSS pur, au debut en local puis maintenant
+        heberger sur GitHub Pages, ce qui m'a
+        permis de travailler la mise en page, la navigation entre plusieurs pages et la
+        réutilisation de blocs répétés (comme les grilles de logos).
+        Site realiser pour ordinateur seulement.
+      </p>
+    </section>
+
+    <section class="block">
+      <h2>Captures d'écran</h2>
+      <div class="shot-gallery">
+        <div class="shot-placeholder"><img src="capture-img/homeexemple.png"></div>
+        <div class="shot-placeholder"><img src="capture-img/marqueexemple.png"></div>
+        <div class="shot-placeholder"><img src="capture-img/nissanexemple.png"></div>
+      </div>
+      <div class="repo-link-row">
+        <a href="https://bray293.github.io/Historium-Legacy/" target="_blank" class="btn ghost">Voir le site complet sur
+          internet ↗</a>
+      </div>
+    </section>
+
+    <section class="block">
+      <h2>Code</h2>
+      <div class="code-block">
+        <div class="code-topbar"><span>extrait — welcome.html (Historium Legacy)</span></div>
+        <pre><code>&lt;!-- Barre de navigation en haut de page --&gt;
+&lt;div class="top-bar"&gt;
+    &lt;div class="logo"&gt;
+        &lt;img src="../../image/jante.png" alt="Wheel" class="mon-image"&gt;
+    &lt;/div&gt;
+    &lt;div class="text-top"&gt;
+        &lt;h1 id="Top"&gt;Historium Legacy&lt;/h1&gt;
+    &lt;/div&gt;
+    &lt;div class="menu"&gt;
+        &lt;a href="../fr/Acceuil.html"&gt;French&lt;/a&gt;
+        &lt;a href="../en/contact.html"&gt;Contact&lt;/a&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!-- Bloc répété pour chaque paire de marques --&gt;
+&lt;div class="conteneurC"&gt;
+    &lt;div class="two-images"&gt;
+        &lt;a href="../en/Nissan.html"&gt;
+            &lt;img src="../../image/LogoNissan.png" alt="Nissan Logo" class="image-hover"&gt;
+        &lt;/a&gt;
+        &lt;a href="../en/Mitsubishi.html"&gt;
+            &lt;img src="../../image/Mitsubishi.png" alt="Mitsubishi Logo" class="image-hover"&gt;
+        &lt;/a&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+      </div>
+      <div class="repo-link-row">
+        <a href="https://github.com/Bray293/Historium-Legacy" target="_blank" class="btn ghost">Voir le dépôt complet
+          sur GitHub ↗</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>© 2026 Brayan Campion — construit avec HTML &amp; CSS, hébergé sur GitHub Pages</footer>
+
+  <script>
+    function toggleMenu(btn) {
+      document.getElementById('siteNav').classList.toggle('open');
+      btn.classList.toggle('open');
+    }
+  </script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      var overlay = document.createElement('div');
+      overlay.className = 'lightbox-overlay';
+      var bigImg = document.createElement('img');
+      overlay.appendChild(bigImg);
+      document.body.appendChild(overlay);
+      overlay.addEventListener('click', function () {
+        overlay.classList.remove('open');
+      });
+      document.querySelectorAll('img.filled, .shot-gallery img').forEach(function (el) {
+        el.classList.add('zoomable');
+        el.addEventListener('click', function () {
+          bigImg.src = el.src;
+          overlay.classList.add('open');
+        });
+      });
+    });
+  </script>
+
+</body>
+
+</html>

@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Withoff — Brayan Campion</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+
+  <header class="editor-window">
+    <div class="window-chrome">
+      <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
+      <span class="window-title">portfolio — ~/brayan-campion</span>
+      <button class="menu-toggle" aria-label="Ouvrir le menu" onclick="toggleMenu(this)">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <nav class="tabs" id="siteNav">
+      <a href="../index.html">Mon<span class="ext">Profile</span></a>
+      <a href="../about.html">Mon<span class="ext">Parcour</span></a>
+      <a href="../projects.html" class="active">Mes<span class="ext">Projets</span><span class="unsaved"></span></a>
+      <a href="../passions.html">Mes<span class="ext">Passion</span></a>
+      <a href="../contact.html">Contact<span class="ext"></span></a>
+    </nav>
+  </header>
+
+  <main>
+    <a href="../projects.html" class="back-link">← retour aux projets</a>
+
+    <div class="project-header">
+      <span class="eyebrow">// projet 01</span>
+      <h1>Jeu Withoff</h1>
+      <div class="tags"><span>Java</span></div>
+    </div>
+
+    <section class="block">
+      <h2>Explication</h2>
+      <p style="max-width:65ch;">
+        Withoff est une implémentation du jeu de Wythoff, un jeu combinatoire à deux joueurs jouable
+        en console. Un pion est placé aléatoirement sur la ligne du haut ou la colonne de droite
+        d'un plateau carré. À tour de rôle, les joueurs déplacent ce même pion vers le coin
+        inférieur gauche, en choisissant une direction (gauche, bas ou diagonale) et un nombre de
+        cases. Le joueur qui parvient à poser le pion exactement dans ce coin remporte la partie.
+        Le plus difficile a été de bien gérer la validation des déplacements (empêcher le pion de
+        sortir du plateau) et l'alternance propre entre les deux joueurs. Le jeu se joue uniquement dans
+        terminal.
+      </p>
+    </section>
+
+    <section class="block">
+      <h2>Captures d'écran</h2>
+      <div class="shot-gallery">
+        <div class="shot-placeholder"><img src="capture-img/wythoff1.png"></div>
+        <div class="shot-placeholder"><img src="capture-img/wythoff2.png"></div>
+        <div class="shot-placeholder"><img src="capture-img/wythoff3.png"></div>
+        <div class="shot-placeholder"><img src="capture-img/wythoff4.png"></div>
+      </div>
+    </section>
+
+    <section class="block">
+      <h2>Code</h2>
+      <div class="code-block">
+        <div class="code-topbar"><span>extrait — WythoffJcJ.java</span></div>
+        <pre><code>/**
+ * Demande a l'utilisateur dans quelle direction il
+ * veut aller puis le nombre de cases a déplacer,
+ * et met à jour la position du pion sur le plateau.
+ */
+void ajoutePion(char[][] plateau) {
+    int nbCase;
+    String mouvement;
+
+    do {
+        mouvement = SimpleInput.getString("Dans quelle direction souhaitez-vous aller : ");
+    } while (!mouvement.equals("gauche") && !mouvement.equals("bas") && !mouvement.equals("diagonal"));
+
+    do {
+        nbCase = SimpleInput.getInt("De combien de cases souhaitez-vous bouger : ");
+    } while (nbCase > plateau.length || nbCase < 0);
+
+    int nouvellePositionX = positionX;
+    int nouvellePositionY = positionY;
+
+    if (mouvement.equals("gauche")) {
+        nouvellePositionY = positionY - nbCase;
+    } else if (mouvement.equals("diagonal")) {
+        nouvellePositionX = positionX + nbCase;
+        nouvellePositionY = positionY - nbCase;
+    } else if (mouvement.equals("bas")) {
+        nouvellePositionX = positionX + nbCase;
+    }
+
+    if (nouvellePositionX >= 0 && nouvellePositionX < plateau.length
+        && nouvellePositionY >= 0 && nouvellePositionY < plateau.length) {
+        plateau[positionX][positionY] = ' ';
+        positionX = nouvellePositionX;
+        positionY = nouvellePositionY;
+        plateau[positionX][positionY] = 'O';
+    } else {
+        System.out.println("Le mouvement est invalide. Le pion sort du tableau.");
+        ajoutePion(plateau); // redemande le mouvement
+    }
+}
+
+/**
+ * Vérifie si le pion a atteint le coin inférieur gauche,
+ * ce qui signifie la victoire du joueur qui vient de jouer.
+ */
+boolean Victoire(char[][] plateau) {
+    boolean victoire = false;
+    if (plateau[plateau.length - 1][0] == 'O') {
+        victoire = true;
+    }
+    return victoire;
+}</code></pre>
+      </div>
+      <div class="repo-link-row">
+        <a href="https://github.com/Bray293/Wythoff" target="_blank" class="btn ghost">Voir le dépôt complet sur GitHub
+          ↗</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>© 2026 Brayan Campion — construit avec HTML &amp; CSS, hébergé sur GitHub Pages</footer>
+
+  <script>
+    function toggleMenu(btn) {
+      document.getElementById('siteNav').classList.toggle('open');
+      btn.classList.toggle('open');
+    }
+  </script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      var overlay = document.createElement('div');
+      overlay.className = 'lightbox-overlay';
+      var bigImg = document.createElement('img');
+      overlay.appendChild(bigImg);
+      document.body.appendChild(overlay);
+      overlay.addEventListener('click', function () {
+        overlay.classList.remove('open');
+      });
+      document.querySelectorAll('img.filled, .shot-gallery img').forEach(function (el) {
+        el.classList.add('zoomable');
+        el.addEventListener('click', function () {
+          bigImg.src = el.src;
+          overlay.classList.add('open');
+        });
+      });
+    });
+  </script>
+</body>
+
+</html>

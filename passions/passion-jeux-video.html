@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jeux vidéo — Brayan Campion</title>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body class="theme-games">
+
+<header class="editor-window">
+  <div class="window-chrome">
+    <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
+    <span class="window-title">portfolio — ~/brayan-campion</span>
+    <button class="menu-toggle" aria-label="Ouvrir le menu" onclick="toggleMenu(this)">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <nav class="tabs" id="siteNav">
+    <a href="../index.html">Mon<span class="ext">Profile</span></a>
+    <a href="../about.html">Mon<span class="ext">Parcour</span></a>
+    <a href="../projects.html">Mes<span class="ext">Projets</span></a>
+    <a href="../passions.html" class="active">Mes<span class="ext">Passion</span><span class="unsaved"></span></a>
+    <a href="../contact.html">Contact<span class="ext"></span></a>
+  </nav>
+</header>
+
+<section class="passion-hero">
+  <span class="eyebrow">// passion 02</span>
+  <h1>Jeux vidéo</h1>
+  <p>Entre la montée en compétence sur des jeux compétitifs et l'envie de vivre une histoire en solo, j'aime les deux facettes du jeu vidéo : progresser face aux autres, et me poser devant un bon univers.</p>
+</section>
+
+<section class="passion-section">
+  <div class="inner">
+    <div class="img-placeholder"><img src="img/RocketLeague.jpg" class="filled"></div>
+    <div>
+      <span class="eyebrow">// ce que j'aime</span>
+      <h2>Rocket League, un jeu simple en apparence</h2>
+      <p>C'est le jeu auquel je reviens le plus souvent. Il est assez complexe à maîtriser, et
+      c'est justement ce qui me plaît : apprendre de nouvelles mécaniques, affiner mes réflexes
+      et voir concrètement mon évolution par rapport aux autres joueurs au fil des saisons.</p>
+    </div>
+  </div>
+</section>
+
+<section class="passion-section alt reverse">
+  <div class="inner">
+    <div class="img-placeholder"><img src="img/haste.jpg" class="filled"></div>
+    <div>
+      <span class="eyebrow">// l'autre facette</span>
+      <h2>Des jeux solo avec une vraie histoire</h2>
+      <p>À côté de la compétition, j'aime aussi les jeux plus posés qui nécessite tout de meme de la reactivité car c'est un jeu rapide, 
+      avec une histoire qui donne envie d'avancer — comme Haste. 
+      C'est un bon contraste avec l'aspect compétitif de Rocket League : 
+      deux façons différentes de me poser devant un jeu.</p>
+    </div>
+  </div>
+</section>
+
+<section class="passion-quote">
+  <blockquote>
+    « Un bon jeu, c'est soit une progression qui n'a pas de fin, soit une histoire qu'on n'oublie pas. »
+    <cite>— Brayan Campion</cite>
+  </blockquote>
+</section>
+
+<div class="passion-links">
+  <a href="../projets/project-withoff.html" class="btn ghost">Voir le projet Withoff →</a>
+  <a href="../passions.html" class="btn ghost" style="margin-left:12px;">← retour aux passions</a>
+</div>
+
+<footer>© 2026 Brayan Campion — construit avec HTML &amp; CSS, hébergé sur GitHub Pages</footer>
+
+<script>
+  function toggleMenu(btn) {
+    document.getElementById('siteNav').classList.toggle('open');
+    btn.classList.toggle('open');
+  }
+</script>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    var overlay = document.createElement('div');
+    overlay.className = 'lightbox-overlay';
+    var bigImg = document.createElement('img');
+    overlay.appendChild(bigImg);
+    document.body.appendChild(overlay);
+    overlay.addEventListener('click', function () {
+      overlay.classList.remove('open');
+    });
+    document.querySelectorAll('img.filled, .shot-gallery img').forEach(function (el) {
+      el.classList.add('zoomable');
+      el.addEventListener('click', function () {
+        bigImg.src = el.src;
+        overlay.classList.add('open');
+      });
+    });
+  });
+</script>
+
+</body>
+</html>

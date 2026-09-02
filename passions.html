@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Passions — Brayan Campion</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="editor-window">
+  <div class="window-chrome">
+    <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
+    <span class="window-title">portfolio — ~/brayan-campion</span>
+    <button class="menu-toggle" aria-label="Ouvrir le menu" onclick="toggleMenu(this)">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <nav class="tabs" id="siteNav">
+    <a href="index.html">Mon<span class="ext">Profile</span></a>
+    <a href="about.html">Mon<span class="ext">Parcour</span></a>
+    <a href="projects.html">Mes<span class="ext">Projets</span></a>
+    <a href="passions.html" class="active">Mes<span class="ext">Passion</span><span class="unsaved"></span></a>
+    <a href="contact.html">Contact<span class="ext"></span></a>
+  </nav>
+</header>
+
+<main>
+  <span class="eyebrow">// passions</span>
+  <h2>En dehors du code</h2>
+  <p style="max-width:60ch;">Ce qui m'anime quand en dehors du travail. Remplace les textes ci-dessous par tes propres anecdotes ou détails.</p>
+
+  <div class="project-grid">
+
+    <div class="project-card" style="--bg-img:url('passions/img/passion-programmation.jpg')">
+      <span class="file-tag mono">passions/programmation</span>
+      <h3>Programmation</h3>
+      <p>
+        Bien plus qu'un métier visé, c'est une vraie passion : apprendre, bidouiller, comprendre
+        comment les choses fonctionnent sous le capot.
+      </p>
+      <div class="links">
+        <a href="passions/passion-programmation.html">En savoir plus →</a>
+      </div>
+    </div>
+
+    <div class="project-card" style="--bg-img:url('passions/img/passion-jeux-video.jpg')">
+      <span class="file-tag mono">passions/jeux-video</span>
+      <h3>Jeux vidéo</h3>
+      <p>
+        Joueur curieux, j'aime aussi bien jouer qu'analyser — ce qui
+        rejoint mon envie de développer les miens dans le future.
+      </p>
+      <div class="links">
+        <a href="passions/passion-jeux-video.html">En savoir plus →</a>
+      </div>
+    </div>
+
+    <div class="project-card" style="--bg-img:url('passions/img/passion-automobile.jpg')">
+      <span class="file-tag mono">passions/automobile</span>
+      <h3>Automobile</h3>
+      <p>
+        Passionné de mécanique et de technologie automobile, j'aime comprendre et apprendre le fonctionnement
+        des véhicules afin de realisé certaine chose moi meme.
+      </p>
+      <div class="links">
+        <a href="passions/passion-automobile.html">En savoir plus →</a>
+      </div>
+    </div>
+
+  </div>
+</main>
+
+<footer>© 2026 Brayan Campion — construit avec HTML &amp; CSS, hébergé sur GitHub Pages</footer>
+
+<script>
+  function toggleMenu(btn) {
+    document.getElementById('siteNav').classList.toggle('open');
+    btn.classList.toggle('open');
+  }
+</script>
+
+</body>
+</html>

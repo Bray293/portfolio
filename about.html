@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>À propos — Brayan Campion</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="editor-window">
+  <div class="window-chrome">
+    <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
+    <span class="window-title">portfolio — ~/brayan-campion</span>
+    <button class="menu-toggle" aria-label="Ouvrir le menu" onclick="toggleMenu(this)">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <nav class="tabs" id="siteNav">
+    <a href="index.html">Mon<span class="ext">Profile</span></a>
+    <a href="about.html" class="active">Mon<span class="ext">Parcour</span><span class="unsaved"></span></a>
+    <a href="projects.html">Mes<span class="ext">Projets</span></a>
+    <a href="passions.html">Mes<span class="ext">Passion</span></a>
+    <a href="contact.html">Contact</a>
+  </nav>
+</header>
+
+<main>
+  <span class="eyebrow">// à propos</span>
+  <h2>Qui je suis</h2>
+  <p style="max-width:65ch;">
+    Diplômé d'un BTS CIEL (Cybersécurité, Informatique et Réseaux, Électronique) après une
+    première année de BUT Informatique, je recherche aujourd'hui un poste de développeur pour
+    démarrer ma carrière. Curieux, rigoureux et autonome, j'ai construit mes compétences en
+    programmation à travers plusieurs projets personnels et académiques, et je suis motivé à
+    l'idée de les mettre au service d'une équipe.
+  </p>
+
+  <h2 style="margin-top:48px;">Compétences</h2>
+  <div class="chip-row">
+    <span class="chip">Java</span>
+    <span class="chip">C++</span>
+    <span class="chip">SQL</span>
+    <span class="chip">HTML / CSS</span>
+    <span class="chip">Réseaux</span>
+  </div>
+
+  <h2 style="margin-top:48px;">Langues</h2>
+  <div class="chip-row">
+    <span class="chip">Anglais — B1</span>
+    <span class="chip">Espagnol — A2</span>
+  </div>
+
+  <h2 style="margin-top:48px;">Parcours</h2>
+  <div class="timeline">
+    <div class="timeline-item">
+      <span class="date mono">BTS CIEL</span>
+      <h3>Lycée, Lannion</h3>
+      <p>Cybersécurité, Informatique et Réseaux, Électronique — diplômé.</p>
+    </div>
+    <div class="timeline-item">
+      <span class="date mono">BUT Informatique — 1ère année</span>
+      <h3>IUT, Vannes</h3>
+      <p>Réorientation vers le BTS CIEL après la première année.</p>
+    </div>
+    <div class="timeline-item">
+      <span class="date mono">Baccalauréat STI2D</span>
+      <h3>Lycée Yves Thépot, Quimper</h3>
+      <p>Spécialité SIN (Systèmes d'Information et Numérique) — mention Assez Bien.</p>
+    </div>
+  </div>
+
+  <h2 style="margin-top:48px;">Expérience</h2>
+  <div class="timeline">
+    <div class="timeline-item">
+      <span class="date mono">Stage — Technicien réseau</span>
+      <h3>Guyader Gastronomie</h3>
+      <p>Mise en place d'un VPN IPSec pour sécuriser les connexions réseau, supervision des postes
+      connectés et configuration d'un préréglage pour une imprimante réseau.</p>
+    </div>
+    <div class="timeline-item">
+      <span class="date mono">Stage de 3ème</span>
+      <h3>Entreprise Guilbaud</h3>
+      <p>Création et reproduction de plans en 3D, mesure des ressources nécessaires, établissement
+      de devis et achat des matériaux.</p>
+    </div>
+  </div>
+</main>
+
+<footer>© 2026 Brayan Campion — construit avec HTML &amp; CSS, hébergé sur GitHub Pages</footer>
+
+<script>
+  function toggleMenu(btn) {
+    document.getElementById('siteNav').classList.toggle('open');
+    btn.classList.toggle('open');
+  }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Brayan Campion — Développeur</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="editor-window">
+  <div class="window-chrome">
+    <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
+    <span class="window-title">portfolio — ~/brayan-campion</span>
+    <button class="menu-toggle" aria-label="Ouvrir le menu" onclick="toggleMenu(this)">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <nav class="tabs" id="siteNav">
+    <a href="index.html" class="active">Mon<span class="ext">Profile</span><span class="unsaved"></span></a>
+    <a href="about.html">Mon<span class="ext">Parcour</span></a>
+    <a href="projects.html">Mes<span class="ext">Projets</span></a>
+    <a href="passions.html">Mes<span class="ext">Passion</span></a>
+    <a href="contact.html">Contact<span class="ext"></span></a>
+  </nav>
+</header>
+
+<main>
+  <section class="hero">
+    <span class="eyebrow">// bonjour, je m'appelle</span>
+    <h1>Brayan Campion</h1>
+    <p class="lead">
+      Développeur junior diplômé d'un BTS CIEL. Curieux, rigoureux et autonome, 
+      j'aime comprendre comment les systèmes fonctionnent et construire
+      des projets concrets.
+    </p>
+
+    <div class="chip-row">
+      <span class="chip">Java</span>
+      <span class="chip">C++</span>
+      <span class="chip">SQL</span>
+      <span class="chip">HTML / CSS</span>
+      <span class="chip">Réseaux</span>
+    </div>
+
+    <div class="cta-row">
+      <a href="projects.html" class="btn primary">Voir mes projets →</a>
+      <a href="passions.html" class="btn primary">Voir mes Passions →</a>
+      <a href="contact.html" class="btn ghost">Me contacter</a>
+    </div>
+  </section>
+</main>
+
+<footer>© 2026 Brayan Campion — construit avec HTML &amp; CSS, hébergé sur GitHub Pages</footer>
+
+<script>
+  function toggleMenu(btn) {
+    document.getElementById('siteNav').classList.toggle('open');
+    btn.classList.toggle('open');
+  }
+</script>
+
+</body>
+</html>

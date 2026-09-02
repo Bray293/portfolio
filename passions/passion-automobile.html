@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Automobile — Brayan Campion</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+
+<body class="theme-auto">
+
+  <header class="editor-window">
+    <div class="window-chrome">
+      <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
+      <span class="window-title">portfolio — ~/brayan-campion</span>
+      <button class="menu-toggle" aria-label="Ouvrir le menu" onclick="toggleMenu(this)">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <nav class="tabs" id="siteNav">
+      <a href="../index.html">Mon<span class="ext">Profile</span></a>
+      <a href="../about.html">Mon<span class="ext">Parcour</span></a>
+      <a href="../projects.html">Mes<span class="ext">Projets</span></a>
+      <a href="../passions.html" class="active">Mes<span class="ext">Passion</span><span class="unsaved"></span></a>
+      <a href="../contact.html">Contact<span class="ext"></span></a>
+    </nav>
+  </header>
+
+  <section class="passion-hero">
+    <span class="eyebrow">// passion 03</span>
+    <h1>Automobile</h1>
+    <p>J'ai ma propre voiture sur laquelle j'ai envie d'apprendre à faire les choses moi-même, et un vrai faible pour le
+      style des voitures japonaises.</p>
+  </section>
+
+  <section class="passion-section">
+    <div class="inner">
+      <div class="img-placeholder"><img src="img/mavoiture.jpg" class="filled">
+        class="filled"&gt;</div>
+      <div>
+        <span class="eyebrow">// ce qui m'attire</span>
+        <h2>Apprendre à bricoler par moi-même</h2>
+        <p>J'ai ma propre voiture, et plutôt que de tout confier à un garage, j'aime apprendre à
+          comprendre et entretenir moi-même certains éléments. C'est un peu la même logique qu'en
+          programmation : comprendre comment ça marche avant de simplement faire réparer.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="passion-section alt reverse">
+    <div class="inner">
+      <div class="img-placeholder"><img src="img/R35LBWK.jpg" class="filled"></div>
+      <div>
+        <span class="eyebrow">// le style qui me plaît</span>
+        <h2>Un faible pour les voitures japonaises</h2>
+        <p>Côté design, ce sont les voitures japonaises qui m'attirent le plus. Ma voiture de rêve :
+          une Nissan GT-R R35 avec un kit large Liberty Walk — ce mélange de performance et de look
+          radical résume bien ce que j'aime dans l'automobile.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="passion-quote">
+    <blockquote>
+      « Une voiture, ça se comprend avant de se réparer. »
+      <cite>— Brayan Campion</cite>
+    </blockquote>
+  </section>
+
+  <div class="passion-links">
+    <a href="../passions.html" class="btn ghost">← retour aux passions</a>
+  </div>
+
+  <footer>© 2026 Brayan Campion — construit avec HTML &amp; CSS, hébergé sur GitHub Pages</footer>
+
+  <script>
+    function toggleMenu(btn) {
+      document.getElementById('siteNav').classList.toggle('open');
+      btn.classList.toggle('open');
+    }
+  </script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      var overlay = document.createElement('div');
+      overlay.className = 'lightbox-overlay';
+      var bigImg = document.createElement('img');
+      overlay.appendChild(bigImg);
+      document.body.appendChild(overlay);
+      overlay.addEventListener('click', function () {
+        overlay.classList.remove('open');
+      });
+      document.querySelectorAll('img.filled, .shot-gallery img').forEach(function (el) {
+        el.classList.add('zoomable');
+        el.addEventListener('click', function () {
+          bigImg.src = el.src;
+          overlay.classList.add('open');
+        });
+      });
+    });
+  </script>
+</body>
+
+</html>

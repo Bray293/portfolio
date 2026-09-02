@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Programmation — Brayan Campion</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+
+<body class="theme-code">
+
+  <header class="editor-window">
+    <div class="window-chrome">
+      <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
+      <span class="window-title">portfolio — ~/brayan-campion</span>
+      <button class="menu-toggle" aria-label="Ouvrir le menu" onclick="toggleMenu(this)">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <nav class="tabs" id="siteNav">
+      <a href="../index.html">Mon<span class="ext">Profile</span></a>
+      <a href="../about.html">Mon<span class="ext">Parcour</span></a>
+      <a href="../projects.html">Mes<span class="ext">Projets</span></a>
+      <a href="../passions.html" class="active">Mes<span class="ext">Passion</span><span class="unsaved"></span></a>
+      <a href="../contact.html">Contact<span class="ext"></span></a>
+    </nav>
+  </header>
+
+  <section class="passion-hero">
+    <span class="eyebrow">// passion 01</span>
+    <h1>Programmation</h1>
+    <p>Plus que courir après un nouveau langage, ce qui me motive aujourd'hui c'est de consolider ce que je connais déjà
+      — Java, C++ — et de me perfectionner, notamment en m'appuyant sur l'IA sans m'y reposer entièrement.</p>
+  </section>
+
+  <section class="passion-section">
+    <div class="inner">
+      <div class="img-placeholder"><img src="img/Progcode2.png" class="filled"></div>
+      <div>
+        <span class="eyebrow">// pourquoi ça me passionne</span>
+        <h2>Comprendre comment ça marche</h2>
+        <p>Ce qui me plaît dans la programmation, c'est cette logique de résolution de problème :
+          comprendre pourquoi quelque chose ne fonctionne pas, et pourquoi une solution marche
+          vraiment, pas juste faire fonctionner un code sans le comprendre.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="passion-section alt reverse">
+    <div class="inner">
+      <div class="img-placeholder"><img src="img/progwithai.png" class="filled"></div>
+      <div>
+        <span class="eyebrow">// aller au fond des choses</span>
+        <h2>Comprendre la logique derrière le jeu</h2>
+        <p>Faire fonctionner le jeu ne me suffisait pas : je voulais comprendre pourquoi il
+          fonctionne. Le jeu de Wythoff a une vraie théorie mathématique derrière lui — les
+          positions gagnantes se calculent à partir du nombre d'or. Que ce soit en cherchant seul
+          ou en m'aidant ponctuellement d'une IA pour clarifier un point, l'objectif reste le
+          même : comprendre vraiment la logique, pas juste copier une solution qui marche.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="passion-quote">
+    <blockquote>
+      « L'IA peut m'aider à comprendre plus vite, mais pas comprendre à ma place. »
+      <cite>— Brayan Campion</cite>
+    </blockquote>
+  </section>
+
+  <div class="passion-links">
+    <a href="../projects.html" class="btn ghost">Voir mes projets de code →</a>
+    <a href="../passions.html" class="btn ghost" style="margin-left:12px;">← retour aux passions</a>
+  </div>
+
+  <footer>© 2026 Brayan Campion — construit avec HTML &amp; CSS, hébergé sur GitHub Pages</footer>
+
+  <script>
+    function toggleMenu(btn) {
+      document.getElementById('siteNav').classList.toggle('open');
+      btn.classList.toggle('open');
+    }
+  </script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      var overlay = document.createElement('div');
+      overlay.className = 'lightbox-overlay';
+      var bigImg = document.createElement('img');
+      overlay.appendChild(bigImg);
+      document.body.appendChild(overlay);
+      overlay.addEventListener('click', function () {
+        overlay.classList.remove('open');
+      });
+      document.querySelectorAll('img.filled, .shot-gallery img').forEach(function (el) {
+        el.classList.add('zoomable');
+        el.addEventListener('click', function () {
+          bigImg.src = el.src;
+          overlay.classList.add('open');
+        });
+      });
+    });
+  </script>
+
+</body>
+
+</html>

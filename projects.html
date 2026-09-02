@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Projets — Brayan Campion</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="editor-window">
+  <div class="window-chrome">
+    <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
+    <span class="window-title">portfolio — ~/brayan-campion</span>
+    <button class="menu-toggle" aria-label="Ouvrir le menu" onclick="toggleMenu(this)">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <nav class="tabs" id="siteNav">
+    <a href="index.html">Mon<span class="ext">Profile</span></a>
+    <a href="about.html">Mon<span class="ext">Parcour</span></a>
+    <a href="projects.html" class="active">Mes<span class="ext">Projets</span><span class="unsaved"></span></a>
+    <a href="passions.html">Mes<span class="ext">Passion</span></a>
+    <a href="contact.html">Contact<span class="ext"></span></a>
+  </nav>
+</header>
+
+<main>
+  <span class="eyebrow">// projets</span>
+  <h2>Ce que j'ai construit</h2>
+  <p style="max-width:60ch;">Quelques projets personnels et académiques. Ajoute les liens vers tes dépôts GitHub ou tes démos quand ils sont en ligne.</p>
+
+  <div class="project-grid">
+
+    <div class="project-card">
+      <span class="file-tag mono">01 — withoff/</span>
+      <h3>Jeu Withoff</h3>
+      <p>Développement complet d'un jeu en Java, de la logique du jeu à son interface.</p>
+      <div class="tags"><span>Java</span></div>
+      <div class="links">
+        <a href="projets/project-withoff.html">Voir le code ↗</a>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <span class="file-tag mono">03 — site-personnel/</span>
+      <h3>Site web personnel</h3>
+      <p>Développement d'un site web heberger sur github page, structure et mise en page codées à la main.</p>
+      <div class="tags"><span>HTML</span><span>CSS</span></div>
+      <div class="links">
+        <a href="projets/project-site-personnel.html">Voir le code ↗</a>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer>© 2026 Brayan Campion — construit avec HTML &amp; CSS, hébergé sur GitHub Pages</footer>
+
+<script>
+  function toggleMenu(btn) {
+    document.getElementById('siteNav').classList.toggle('open');
+    btn.classList.toggle('open');
+  }
+</script>
+
+</body>
+</html>
